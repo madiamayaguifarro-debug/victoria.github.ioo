@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Rockstar UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    .header {
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .sidebar {
+      width: 20%;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .menu-item {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      background: #00c6ff;
+      color: black;
+    }
+
+    .content {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05) rotate(1deg);
+    }
+
+    .card:nth-child(2) {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    .card:nth-child(3) {
+      background: linear-gradient(135deg, #00ff87, #60efff);
+      color: black;
+    }
+
+    .card:nth-child(4) {
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">🔥 Mi App Rockstar</div>
+
+  <div class="container">
+
+    <div class="sidebar">
+      <div class="menu-item">Inicio</div>
+      <div class="menu-item">Perfil</div>
+      <div class="menu-item">Mensajes</div>
+      <div class="menu-item">Ajustes</div>
+    </div>
+
+    <div class="content">
+      <div class="card">Usuarios</div>
+      <div class="card">Ventas</div>
+      <div class="card">Estadísticas</div>
+      <div class="card">Notificaciones</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

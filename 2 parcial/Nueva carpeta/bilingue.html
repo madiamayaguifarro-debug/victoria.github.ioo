@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTP en Asistente Ejecutivo Bilingüe</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #eef2f7, #dfe9f3);
+      color: #333;
+    }
+
+    /* HEADER CON DEGRADADO ROJO Y AZUL */
+    header{
+      height: 100vh;
+
+      background:
+        linear-gradient(135deg, rgba(255,0,0,0.6), rgba(0,80,255,0.7)),
+        url('oficina.jpg');
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      color: white;
+      padding: 20px;
+    }
+
+    header h1{
+      font-size: 60px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    header p{
+      font-size: 22px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .info{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .info img,
+    .info video{
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: 0.4s;
+    }
+
+    .info img:hover,
+    .info video:hover{
+      transform: scale(1.03);
+    }
+
+    .texto h2{
+      font-size: 40px;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .texto p{
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .materias{
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+    }
+
+    .materias h2{
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #0d6efd;
+    }
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 25px;
+    }
+
+    .card{
+      background: #0d6efd;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      top: 0;
+      left: -100%;
+      transition: 0.5s;
+    }
+
+    .card:hover::before{
+      left: 100%;
+    }
+
+    .card:hover{
+      transform: translateY(-10px);
+      background: #084298;
+    }
+
+    .card h3{
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .card p{
+      line-height: 1.6;
+    }
+
+    footer{
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size: 40px;
+      }
+
+      header p{
+        font-size: 18px;
+      }
+
+      .texto h2,
+      .materias h2{
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>BTP en Asistente Ejecutivo Bilingüe</h1>
+
+      <p>
+        Una carrera enfocada en la administración, comunicación empresarial y el dominio del inglés para el ámbito profesional.
+      </p>
+    </div>
+  </header>
+
+  <section class="contenedor">
+
+    <div class="info">
+
+      <div class="texto">
+
+        <h2>¿Qué es la carrera?</h2>
+
+        <p>
+          El BTP en Asistente Ejecutivo Bilingüe forma profesionales capaces de trabajar en empresas nacionales e internacionales.
+        </p>
+
+        <p>
+          Se desarrollan habilidades en organización, redacción, comunicación en inglés y manejo de oficinas ejecutivas.
+        </p>
+
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1470&auto=format&fit=crop" alt="Oficina ejecutiva">
+
+    </div>
+
+    <div class="info">
+
+      <video autoplay muted loop playsinline>
+        <source src="videobilingue.mp4">
+      </video>
+
+      <div class="texto">
+
+        <h2>¿Qué se aprende?</h2>
+
+        <p>
+          • Inglés empresarial y comunicación profesional.<br>
+          • Administración de oficinas.<br>
+          • Redacción de documentos ejecutivos.<br>
+          • Atención al cliente.<br>
+          • Organización de agendas y reuniones.<br>
+          • Uso de herramientas digitales.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="materias">
+
+      <h2>Áreas de Aprendizaje</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Inglés</h3>
+          <p>Desarrollo del idioma inglés enfocado en negocios y comunicación formal.</p>
+        </div>
+
+        <div class="card">
+          <h3>Administración</h3>
+          <p>Gestión de oficinas, documentos y procesos empresariales.</p>
+        </div>
+
+        <div class="card">
+          <h3>Ofimática</h3>
+          <p>Manejo de Word, Excel, PowerPoint y herramientas digitales.</p>
+        </div>
+
+        <div class="card">
+          <h3>Comunicación</h3>
+          <p>Habilidades de expresión oral y escrita en entornos laborales.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 - BTP en Asistente Ejecutivo Bilingüe</p>
+  </footer>
+
+</body>
+</html>
+     

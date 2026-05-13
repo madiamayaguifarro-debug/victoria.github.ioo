@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>ejemplo pagina web</title>
+
+<body>
+<table>
+<TR>
+<TD><Strong> curso</Strong></TD>
+<TD><Strong> hora</Strong>
+<TD><Strong> Horario </stronge></TD>
+</TR>
+<TR>
+<TD><Strong> css <Strong></TD>
+<TD><Strong> 20 <Strong></TD>
+<TD><Strong> 16.00-20:00 </Strong></TD>
+</TR>
+<TR>
+<TD><Strong> HTML <Strong></TD>
+<TD><Strong> 20 <Strong></TD>
+<TD><Strong> 16.00-20:00 </Strong></TD>
+</TR>
+<TR>
+<TD><Strong> 60 <Strong></TD>
+<TD><Strong> 20 <Strong></TD>
+<TD><Strong> 16.00-20:00 </Strong></TD>
+</TR>
+</Table>
+<BR><BR>
+
+<table borde = "2">
+<TR>
+<TD width = "200" colspan = "2" align ="center"> A </TD>
+</TR>
+<TR>
+<TD width= "100" align = "center"> B </TD>
+<TD width= "100" align= "center"> c </TD>
+</TR>
+</table>
+
+<table border= "2">
+<TR>
+<TD Rowspon="2" width="200" align="center"> A </TD>
+<TD Rowspon="2" width="200" align="center"> B </TD>
+</TR>
+<TR>
+<TD Rowspon="2" width="200" align="center"> C </TD>
+</TR>}
+
+</TR>
+</table>
+</center>
+<center>
+<BR>
+
+<h2><a href=<file:///E:/_/Un%20troyano%20ha%20ocultado%20los%20archivos/Desarrollo%20web/I%20parcial/index.html"> index </a>
+</BR>
+<BR>
+<h2><a href=<file:///E:/_/Un%20troyano%20ha%20ocultado%20los%20archivos/Desarrollo%20web/I%20parcial/Nipagina.html"> mi pagina </a>
+</BR>
+<BR>
+<h2><a href=<file:///E:/_/Un%20troyano%20ha%20ocultado%20los%20archivos/Desarrollo%20web/I%20parcial/TAREA_ghibli.html.html"> cuadros </a>
+</center>
+</body>
+</html>

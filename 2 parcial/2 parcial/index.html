@@ -1,0 +1,13 @@
+let currentIdx = 0;
+
+const slides = document.querySelectorAll('.slide-carrera');
+
+setInterval(() => {
+
+    slides[currentIdx].classList.remove('active');
+
+    currentIdx = (currentIdx + 1) % slides.length;
+
+    slides[currentIdx].classList.add('active');
+
+}, 5000);

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informática | Tecnología Avanzada</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(to bottom, #040810, #0b1120);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        header{
+            height: 100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+            url('fondo.jpg');
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .header-content h1{
+            font-size: 70px;
+            color: #5ac8fa;
+            text-shadow: 0 0 20px rgba(90,200,250,0.8);
+            margin-bottom: 20px;
+        }
+
+        .header-content p{
+            font-size: 22px;
+            max-width: 800px;
+            color: #dbe7ff;
+            line-height: 1.8;
+        }
+
+        /* CONTENEDOR */
+
+        .contenedor{
+            width: 90%;
+            max-width: 1300px;
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        /* SECCION */
+
+        .info{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 90px;
+        }
+
+        .info img,
+        .info video{
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.5s;
+        }
+
+        .info img:hover,
+        .info video:hover{
+            transform: scale(1.03);
+        }
+
+        .texto h2{
+            color: #5ac8fa;
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .texto p{
+            color: #cfd8e3;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .highlight{
+            color: #5ac8fa;
+            font-weight: bold;
+        }
+
+        /* TARJETAS */
+
+        .materias{
+            margin-top: 50px;
+        }
+
+        .materias h2{
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 50px;
+            color: #5ac8fa;
+        }
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            gap: 30px;
+        }
+
+        .card{
+            background: #0f1729;
+            border: 1px solid #1a3a7a;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .card:hover{
+            transform: translateY(-10px);
+            border-color: #5ac8fa;
+            box-shadow: 0 15px 35px rgba(90,200,250,0.2);
+        }
+
+        .card::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(90,200,250,0.05);
+            top: 0;
+            left: -100%;
+            transition: 0.6s;
+        }
+
+        .card:hover::before{
+            left: 100%;
+        }
+
+        .card i{
+            font-size: 45px;
+            color: #5ac8fa;
+            margin-bottom: 20px;
+        }
+
+        .card h3{
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .card p{
+            color: #c5d0df;
+            line-height: 1.8;
+        }
+
+        /* GALERIA */
+
+        .galeria{
+            margin-top: 100px;
+        }
+
+        .galeria h2{
+            text-align: center;
+            font-size: 50px;
+            color: #5ac8fa;
+            margin-bottom: 50px;
+        }
+
+        .imagenes{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 25px;
+        }
+
+        .imagenes img{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: 0.5s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .imagenes img:hover{
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+
+        footer{
+            margin-top: 100px;
+            text-align: center;
+            padding: 40px;
+            background: #02050b;
+            border-top: 1px solid #1a3a7a;
+            color: #8ea3c0;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .header-content h1{
+                font-size: 45px;
+            }
+
+            .header-content p{
+                font-size: 18px;
+            }
+
+            .texto h2,
+            .materias h2,
+            .galeria h2{
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>Carrera de Informática</h1>
+
+            <p>
+                Especialización enfocada en programación, desarrollo web,
+                redes, mantenimiento y tecnologías digitales avanzadas.
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- CONTENIDO -->
+
+    <section class="contenedor">
+
+        <!-- INFO -->
+
+        <div class="info">
+
+            <div class="texto">
+
+                <h2>¿Qué es Informática?</h2>
+
+                <p>
+                    La carrera de informática prepara estudiantes capaces de crear
+                    sistemas, páginas web, programas y soluciones tecnológicas.
+                    También se aprende sobre <span class="highlight">hardware, redes,
+                    mantenimiento y diseño digital.</span>
+                </p>
+
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop" alt="Programación">
+
+        </div>
+
+        <!-- VIDEO -->
+
+        <div class="info">
+
+            <video autoplay muted loop playsinline>
+                <source src="videoinfo.mp4">
+            </video>
+
+            <div class="texto">
+
+                <h2>Lo que aplicamos</h2>
+
+                <p>
+                    En la carrera realizamos proyectos de 
+                    <span class="highlight">programación en Java</span>,
+                    creación de páginas web con HTML y CSS,
+                    instalación de redes, mantenimiento de computadoras
+                    y diseño gráfico utilizando programas profesionales.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- TARJETAS -->
+
+        <section class="materias">
+
+            <h2>Áreas de Aprendizaje</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <i class="fas fa-code"></i>
+                    <h3>Programación</h3>
+
+                    <p>
+                        Desarrollo de lógica computacional y programas
+                        utilizando Java y algoritmos avanzados.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Desarrollo Web</h3>
+
+                    <p>
+                        Creación de páginas web modernas utilizando
+                        HTML, CSS y diseño responsive.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Redes</h3>
+
+                    <p>
+                        Instalación de cableado estructurado,
+                        configuración de redes y conectividad.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Mantenimiento</h3>
+
+                    <p>
+                        Reparación y mantenimiento de computadoras,
+                        software y hardware.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Diseño Digital</h3>
+
+                    <p>
+                        Uso de herramientas como Photoshop y CorelDraw
+                        para proyectos creativos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Seguridad</h3>
+
+                    <p>
+                        Protección de sistemas, manejo seguro de datos
+                        y prevención de amenazas digitales.
+                    </p>
+                </div>
+
+        </section>
+
+    </section>
+
+    <footer>
+        <p>© 2026 | Tecnología en Informática</p>
+    </footer>
+
+</body>
+</html>

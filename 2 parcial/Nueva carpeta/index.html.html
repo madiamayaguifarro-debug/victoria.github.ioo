@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio | Institución Educativa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body { background-color: #f8f9fa; color: #333; scroll-behavior: smooth; }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: #0a141e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { color: #9fe3c5; font-weight: bold; font-size: 22px; text-transform: uppercase; }
+        .menu a { color: white; margin: 0 12px; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .menu a:hover { color: #6ec1a5; }
+
+        /* SECCIÓN INICIO */
+        .hero-static {
+            height: 90vh;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagen1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            justify-content: center;
+            color: white;
+            text-align: left;
+            padding-left: 8%; 
+        }
+
+        .logo-hero {
+            width: 120px; 
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+        }
+
+        .hero-static h1 { font-size: 55px; margin-bottom: 10px; line-height: 1.1; }
+        .hero-static span { color: #9fe3c5; }
+        .hero-static p { font-size: 20px; opacity: 0.9; }
+
+        /* BOTONES */
+        .btn-matricula {
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: #6ec1a5;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(110, 193, 165, 0.4);
+        }
+        .btn-matricula:hover { background: #5db094; transform: scale(1.05); color: white; }
+
+        section { padding: 80px 10%; text-align: center; }
+        h2 { font-size: 36px; margin-bottom: 40px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; width: 60px; height: 4px; background: #9fe3c5; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        /* CARRUSEL CARRERAS */
+        .carousel-box {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .slide-carrera {
+            position: absolute; width: 100%; height: 100%;
+            opacity: 0; transition: 1s;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background-size: cover; background-position: center; color: white;
+        }
+        .slide-carrera.active { opacity: 1; }
+
+        /* NUEVA SECCIÓN ACTIVIDADES - DISEÑO ESTÉTICO Y DINÁMICO */
+        .actividades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .actividad-card {
+            position: relative;
+            height: 300px;
+            border-radius: 20px;
+            background-color: #0a141e;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-end;
+        }
+        .actividad-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(0deg, rgba(10, 20, 30, 0.9) 0%, transparent 60%);
+            transition: 0.4s;
+        }
+        .actividad-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(159, 227, 197, 0.3);
+        }
+        .actividad-card:hover::before {
+            background: linear-gradient(0deg, rgba(110, 193, 165, 0.8) 0%, transparent 80%);
+        }
+        .actividad-label {
+            position: relative;
+            padding: 20px;
+            color: white;
+            width: 100%;
+            text-align: left;
+            transform: translateY(5px);
+            transition: 0.4s;
+        }
+        .actividad-card:hover .actividad-label {
+            transform: translateY(0);
+        }
+
+        /* INSTALACIONES */
+        .inst-wrapper { overflow: hidden; width: 100%; padding: 20px 0; }
+        .inst-track { display: flex; width: calc(300px * 8); animation: scrollInst 20s linear infinite; }
+        .inst-card { min-width: 300px; height: 350px; margin: 0 15px; border-radius: 20px; background-size: cover; background-position: center; display: flex; align-items: flex-end; }
+        .inst-card .label { width: 100%; background: rgba(10, 20, 30, 0.8); color: white; padding: 15px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+
+        @keyframes scrollInst {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 4 - 120px)); }
+        }
+
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+        .modal-content { background: white; margin: 5% auto; padding: 30px; width: 90%; max-width: 450px; border-radius: 15px; }
+        .modal-content input, .modal-content select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+
+        footer { background: #0a141e; color: white; padding: 60px 10%; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PATRIA</div>
+        <div class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#carreras">Carreras</a>
+            <a href="#instalaciones">Instalaciones</a>
+            <a href="#actividades">Actividades</a>
+            <a href="#video">Video</a>
+            <a href="#direccion">Dirección</a>
+        </div>
+    </nav>
+
+    <section class="hero-static" id="inicio">
+        <img src="LOGO.ico" alt="Logo Colegio" class="logo-hero">
+        <h1>EL FUTURO DE <br><span>HONDURAS</span></h1>
+        <p>Ciclo Escolar 2026</p>
+        <button class="btn-matricula" onclick="document.getElementById('modalMatricula').style.display='block'">MATRICULA</button>
+    </section>
+
+    <section id="carreras">
+        <h2>Oferta Académica</h2>
+        <div class="carousel-box">
+            <div class="slide-carrera active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagen2.jpeg');">
+                <h3>BTP en Informática</h3>
+                <a href="informatica.html" class="btn-matricula" style="font-size:14px; padding:10px 20px; position: relative; z-index: 999; display: inline-block;">INFORMACIÓN</a>
+                         </div>
+
+            <div class="slide-carrera" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagen.png');">
+                <h3>BTP en Mercadotecnia</h3>
+           <a href="merca.html" class="btn-matricula" style="font-size:14px; padding:10px 20px; position: relative; z-index: 999; display: inline-block;">INFORMACIÓN</a>
+                            </div>
+
+            <div class="slide-carrera" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bilingue.png');">
+                <h3>BTP en Asistente Ejecutivo Bilingüe</h3>
+                <a href="bilingue.html" class="btn-matricula" style="font-size:14px; padding:10px 20px; position: relative; z-index: 999; display: inline-block;">INFORMACIÓN</a>
+            </div>
+
+            <div class="slide-carrera" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagen3.jpeg');">
+                <h3>BTP Bachillerato en Ciencias y Humanidades </h3>
+ <a href="h.html" class="btn-matricula" style="font-size:14px; padding:10px 20px; position: relative; z-index: 999; display: inline-block;">INFORMACIÓN</a>
+                            </div>
+
+            <div class="slide-carrera" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('conta2.jpg');">
+                <h3>BTP Contaduría y Finanzas</h3>
+ <a href="c.html" class="btn-matricula" style="font-size:14px; padding:10px 20px; position: relative; z-index: 999; display: inline-block;">INFORMACIÓN</a>
+
+                            </div>
+        </div>
+    </section>
+
+    <section id="instalaciones" style="background: #fff;">
+        <h2>Nuestras Instalaciones</h2>
+        <div class="inst-wrapper">
+            <div class="inst-track">
+                <div class="inst-card" style="background-image: url('usos múltiples.jpg');"><div class="label">Usos múltiples</div></div>
+                <div class="inst-card" style="background-image: url('cancha.jpg');"><div class="label">gimnasio</div></div>
+                <div class="inst-card" style="background-image: url('biblioteca.jpg');"><div class="label">Biblioteca</div></div>
+                <div class="inst-card" style="background-image: url('cafeteria.jpg');"><div class="label">Cafetería</div></div>
+                <div class="inst-card" style="background-image: url('laboratorio.jpg');"><div class="label">Laboratorio</div></div>
+                <div class="inst-card" style="background-image: url('escen.jfif');"><div class="label">escenario</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ACTIVIDADES (ACTUALIZADA A 6 ESPACIOS) -->
+    <section id="actividades">
+        <h2>Vida Estudiantil</h2>
+        <div class="actividades-grid">
+            <div class="actividad-card" style="background-image: url('.github.ioactivi ander.jpg');">
+                <div class="actividad-label"><h3>Deportes</h3></div>
+            </div>
+            <div class="actividad-card" style="background-image: url('actividade.jpg');">
+                <div class="actividad-label"><h3>Actos Cívicos</h3></div>
+            </div>
+            <div class="actividad-card" style="background-image: url('pintura.jpeg');">
+                <div class="actividad-label"><h3>Arte</h3></div>
+            </div>
+            <div class="actividad-card" style="background-image: url('activi.jpg');">
+                <div class="actividad-label"><h3>folclore</h3></div>
+            </div>
+            <div class="actividad-card" style="background-image: url('activid.jpg');">
+                <div class="actividad-label"><h3>Proyectos Sociales</h3></div>
+            </div>
+            <div class="actividad-card" style="background-image: url('feria.jpg');">
+                <div class="actividad-label"><h3>Feria Científica</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" style="background: #fff;">
+        <h2>Video Institucional</h2>
+        <div style="max-width:800px; margin:auto; border-radius:15px; overflow:hidden;">
+            <iframe width="100%" height="450" src="video.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer id="direccion">
+        <div class="footer-grid">
+            <div>
+                <h4>Ubicación</h4>
+                <p>📍 La Lima, Cortés, Honduras.</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>✉️ admisiones@colegio.edu</p>
+                <p>📞 +504 2668-XXXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modalMatricula" class="modal">
+        <div class="modal-content">
+            <h3 style="margin-bottom:15px;">Formulario de Matrícula</h3>
+            <input type="text" placeholder="Nombre completo">
+            <input type="email" placeholder="Correo electrónico">
+            <input type="tel" placeholder="Número de teléfono">
+            <select>
+                <option>Seleccione Carrera</option>
+                <option>BTP Informática</option>
+                <option>BTP Mercadotecnia</option>
+            </select>
+            <button class="btn-matricula" style="width:100%; border-radius:8px;" onclick="alert('Enviado'); location.reload();">ENVIAR</button>
+            <button onclick="document.getElementById('modalMatricula').style.display='none'" style="background:none; border:none; color:red; margin-top:10px; cursor:pointer; width:100%;">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIdx = 0;
+        const slides = document.querySelectorAll('.slide-carrera');
+        setInterval(() => {
+            slides[currentIdx].classList.remove('active');
+            currentIdx = (currentIdx + 1) % slides.length;
+            slides[currentIdx].classList.add('active');
+        }, 5000);
+    </script>
+</body>
+</html>
