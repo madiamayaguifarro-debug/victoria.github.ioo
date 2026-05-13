@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTP Contaduría y Finanzas</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: #0b1220;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* FONDO DINÁMICO */
+    body::before{
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 20%, rgba(0,200,120,0.2), transparent 40%),
+                  radial-gradient(circle at 80% 60%, rgba(0,120,255,0.2), transparent 40%),
+                  radial-gradient(circle at 50% 90%, rgba(255,0,120,0.15), transparent 50%);
+      animation: move 10s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes move{
+      from{transform: scale(1);}
+      to{transform: scale(1.2);}
+    }
+
+    /* HEADER */
+    header{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1{
+      font-size: 65px;
+      color: #00e5a8;
+      text-shadow: 0 0 20px rgba(0,255,180,0.4);
+    }
+
+    header p{
+      margin-top: 15px;
+      font-size: 20px;
+      color: #cfe7ff;
+      max-width: 800px;
+      line-height: 1.7;
+    }
+
+    /* CONTENIDO */
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    /* SECCIONES */
+    .info{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 40px;
+      margin-bottom: 70px;
+      align-items: center;
+    }
+
+    .texto h2{
+      color: #00e5a8;
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .texto p{
+      font-size: 18px;
+      line-height: 1.9;
+      color: #d2e3ff;
+    }
+
+    .highlight{
+      color: #00e5a8;
+      font-weight: bold;
+    }
+
+    /* TARJETAS */
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,255,180,0.2);
+      padding: 30px;
+      border-radius: 18px;
+      transition: 0.4s;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover{
+      transform: translateY(-10px);
+      border-color: #00e5a8;
+      box-shadow: 0 10px 25px rgba(0,255,180,0.15);
+    }
+
+    .card h3{
+      color: #00e5a8;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .card p{
+      color: #cfe7ff;
+      line-height: 1.6;
+    }
+
+    /* SECCION FINAL */
+    .finanzas-box{
+      background: rgba(255,255,255,0.04);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(0,255,180,0.2);
+    }
+
+    .finanzas-box h2{
+      color: #00e5a8;
+      font-size: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .finanzas-box ul{
+      list-style: none;
+      line-height: 2;
+      font-size: 18px;
+      color: #d2e3ff;
+    }
+
+    .finanzas-box ul li::before{
+      content: "💰 ";
+    }
+
+    footer{
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+      color: #7aa8c9;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size: 40px;
+      }
+
+      header p{
+        font-size: 16px;
+      }
+
+      .texto h2{
+        font-size: 30px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div>
+      <h1>BTP Contaduría y Finanzas</h1>
+
+      <p>
+        Formación enfocada en el manejo del dinero, contabilidad,
+        administración empresarial y análisis financiero.
+      </p>
+    </div>
+
+  </header>
+
+  <section class="contenedor">
+
+    <div class="info">
+
+      <div class="texto">
+
+        <h2>¿Qué es esta carrera?</h2>
+
+        <p>
+          El BTP en Contaduría y Finanzas forma estudiantes capaces de
+          administrar recursos económicos, llevar registros contables
+          y analizar la situación financiera de empresas.
+        </p>
+
+      </div>
+
+      <div class="texto">
+
+        <h2>Importancia</h2>
+
+        <p>
+          Es una carrera clave porque toda empresa necesita control financiero,
+          <span class="highlight">contabilidad precisa y toma de decisiones inteligentes.</span>
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="finanzas-box">
+
+      <h2>¿Qué se aprende?</h2>
+
+      <ul>
+        <li>Contabilidad básica y avanzada</li>
+        <li>Control de ingresos y gastos</li>
+        <li>Administración de empresas</li>
+        <li>Análisis financiero</li>
+        <li>Uso de software contable</li>
+        <li>Emprendimiento y negocios</li>
+      </ul>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Contabilidad</h3>
+        <p>Registro y control de operaciones financieras de una empresa.</p>
+      </div>
+
+      <div class="card">
+        <h3>Finanzas</h3>
+        <p>Análisis del dinero, inversiones y planificación económica.</p>
+      </div>
+
+      <div class="card">
+        <h3>Administración</h3>
+        <p>Gestión eficiente de recursos humanos y económicos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Emprendimiento</h3>
+        <p>Creación y manejo de proyectos de negocio rentables.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 - BTP Contaduría y Finanzas</p>
+  </footer>
+
+</body>
+</html>

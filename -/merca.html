@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTP en Mercadotecnia</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #eef2f7, #dfe9f3);
+      color: #333;
+    }
+
+    header{
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('pez.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    header h1{
+      font-size: 60px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    header p{
+      font-size: 22px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .info{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .info img,
+    .info video{
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: 0.4s;
+    }
+
+    .info img:hover,
+    .info video:hover{
+      transform: scale(1.03);
+    }
+
+    .texto h2{
+      font-size: 40px;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .texto p{
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .materias{
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+    }
+
+    .materias h2{
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #0d6efd;
+    }
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 25px;
+    }
+
+    .card{
+      background: #0d6efd;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      top: 0;
+      left: -100%;
+      transition: 0.5s;
+    }
+
+    .card:hover::before{
+      left: 100%;
+    }
+
+    .card:hover{
+      transform: translateY(-10px);
+      background: #084298;
+    }
+
+    .card h3{
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .card p{
+      line-height: 1.6;
+    }
+
+    footer{
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size: 40px;
+      }
+
+      header p{
+        font-size: 18px;
+      }
+
+      .texto h2,
+      .materias h2{
+        font-size: 30px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>BTP en Mercadotecnia</h1>
+
+      <p>
+        Una carrera enfocada en la publicidad, ventas, comunicación y estrategias 
+        para promover productos y servicios en el mercado.
+      </p>
+    </div>
+  </header>
+
+  <section class="contenedor">
+
+    <div class="info">
+
+      <div class="texto">
+
+        <h2>¿Qué es Mercadotecnia?</h2>
+
+        <p>
+          La carrera de BTP en Mercadotecnia prepara a los estudiantes para 
+          desarrollar habilidades en publicidad, ventas y administración de negocios.
+        </p>
+
+        <p>
+          Los estudiantes aprenden a crear campañas publicitarias, analizar el mercado,
+          diseñar estrategias de ventas y mejorar la comunicación con los clientes.
+        </p>
+
+      </div>
+
+      <img src="mercad.jpg" alt="Mercadotecnia">
+
+    </div>
+
+    <div class="info">
+
+      <!-- VIDEO -->
+      <video autoplay muted loop playsinline>
+        <source src="videomerca.mp4">
+      </video>
+
+      <div class="texto">
+
+        <h2>¿Qué aplican en la carrera?</h2>
+
+        <p>
+          En esta carrera se aplican conocimientos de:
+        </p>
+
+        <p>
+          • Publicidad y promoción.<br>
+          • Atención al cliente.<br>
+          • Diseño de campañas publicitarias.<br>
+          • Redes sociales y marketing digital.<br>
+          • Administración y ventas.<br>
+          • Emprendimiento y negocios.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="materias">
+
+      <h2>Áreas de Aprendizaje</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Publicidad</h3>
+
+          <p>
+            Aprenden a crear anuncios y campañas para promocionar productos.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Marketing Digital</h3>
+
+          <p>
+            Uso de redes sociales y plataformas digitales para atraer clientes.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ventas</h3>
+
+          <p>
+            Técnicas para ofrecer productos y mejorar la atención al cliente.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Emprendimiento</h3>
+
+          <p>
+            Desarrollo de ideas de negocio y proyectos empresariales.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 - Página sobre BTP en Mercadotecnia</p>
+  </footer>
+
+</body>
+</html>

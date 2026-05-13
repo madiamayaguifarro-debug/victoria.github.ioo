@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio | Institución Educativa</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PATRIA</div>
+
+        <div class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#carreras">Carreras</a>
+            <a href="#instalaciones">Instalaciones</a>
+            <a href="#actividades">Actividades</a>
+            <a href="#video">Video</a>
+            <a href="#direccion">Dirección</a>
+        </div>
+    </nav>
+
+    <section class="hero-static" id="inicio">
+
+        <img src="LOGO.ico" alt="Logo Colegio" class="logo-hero">
+
+        <h1>EL FUTURO DE <br><span>HONDURAS</span></h1>
+
+        <p>Ciclo Escolar 2026</p>
+
+        <button class="btn-matricula"
+            onclick="document.getElementById('modalMatricula').style.display='block'">
+            MATRÍCULA
+        </button>
+
+    </section>
+
+    <section id="carreras">
+
+        <h2>Oferta Académica</h2>
+
+        <div class="carousel-box">
+
+            <div class="slide-carrera active"
+                style="background-image:
+                linear-gradient(rgba(0,0,0,0.5),
+                rgba(0,0,0,0.5)),
+                url('imagen2.jpeg');">
+
+                <h3>BTP en Informática</h3>
+
+                <a href="informatica.html" class="btn-matricula mini-btn">
+                    INFORMACIÓN
+                </a>
+
+            </div>
+
+            <div class="slide-carrera"
+                style="background-image:
+                linear-gradient(rgba(0,0,0,0.5),
+                rgba(0,0,0,0.5)),
+                url('imagen.png');">
+
+                <h3>BTP en Mercadotecnia</h3>
+
+                <a href="merca.html" class="btn-matricula mini-btn">
+                    INFORMACIÓN
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="instalaciones">
+
+        <h2>Nuestras Instalaciones</h2>
+
+        <div class="inst-wrapper">
+
+            <div class="inst-track">
+
+                <div class="inst-card"
+                    style="background-image: url('usos múltiples.jpg');">
+
+                    <div class="label">Usos múltiples</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="actividades">
+
+        <h2>Vida Estudiantil</h2>
+
+        <div class="actividades-grid">
+
+            <div class="actividad-card"
+                style="background-image: url('actividade.jpg');">
+
+                <div class="actividad-label">
+
+                    <h3>Actos Cívicos</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="video">
+
+        <h2>Video Institucional</h2>
+
+        <div class="video-box">
+
+            <video width="100%" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+    </section>
+
+    <footer id="direccion">
+
+        <div class="footer-grid">
+
+            <div>
+                <h4>Ubicación</h4>
+                <p>📍 La Lima, Cortés, Honduras.</p>
+            </div>
+
+            <div>
+                <h4>Contacto</h4>
+                <p>✉️ admisiones@colegio.edu</p>
+                <p>📞 +504 2668-XXXX</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- MODAL -->
+
+    <div id="modalMatricula" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Formulario de Matrícula</h3>
+
+            <input type="text" placeholder="Nombre completo">
+            <input type="email" placeholder="Correo electrónico">
+            <input type="tel" placeholder="Número de teléfono">
+
+            <select>
+                <option>Seleccione Carrera</option>
+                <option>BTP Informática</option>
+                <option>BTP Mercadotecnia</option>
+            </select>
+
+            <button class="btn-matricula enviar-btn">
+                ENVIAR
+            </button>
+
+            <button class="cerrar-btn"
+                onclick="document.getElementById('modalMatricula').style.display='none'">
+                Cerrar
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
